@@ -110,7 +110,7 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {
-    'fixed_sidebar': True,
+    'fixed_sidebar': False,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

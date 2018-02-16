@@ -18,6 +18,14 @@ Introduction
 
 [1-3 paragraphs introducing topic(s)]
 
+For the functional programming modules, this lesson included, we recommend Functional Python Programming by Steven Lott
+Publisher: Packt Publishing
+Pub. Date: January 31, 2015
+Web ISBN-13: 978-1-78439-761-6
+Print ISBN-13: 978-1-78439-699-2
+http://bit.ly/2azI62S
+
+Each lesson's optional readings will draw from this text.
 
 Learning Objectives
 ===================
@@ -31,16 +39,17 @@ Upon successful completion of this lesson, you will be able to:
 New Words or Concepts
 =====================
 
-* Closure
-* Curry
 * Itertools
 * Functools
-* Multimethods
+* Closure
+* Curry
 
 
 Required Reading
 ================
 
+* Functional Programming Modules
+https://docs.python.org/3/library/functional.html
 
 
 Optional Reading
@@ -50,6 +59,8 @@ Optional Reading
 * Lott, S. (2015) Chapter 8. The Itertools Module. In Functional Python Programming.
 * Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.
 
+*  What is the advantage of currying?
+https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
 
 
 
