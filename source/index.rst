@@ -18,12 +18,13 @@ Introduction
 
 [1-3 paragraphs introducing topic(s)]
 
-For the functional programming modules, this lesson included, we recommend Functional Python Programming by Steven Lott
-Publisher: Packt Publishing
-Pub. Date: January 31, 2015
-Web ISBN-13: 978-1-78439-761-6
-Print ISBN-13: 978-1-78439-699-2
-http://bit.ly/2azI62S
+For the functional programming modules, this lesson included, we recommend Functional Python Programming by Steven Lott.
+
+| Publisher: Packt Publishing
+| Pub. Date: January 31, 2015
+| Web ISBN-13: 978-1-78439-761-6
+| Print ISBN-13: 978-1-78439-699-2
+| http://bit.ly/2azI62S
 
 Each lesson's optional readings will draw from this text.
 
