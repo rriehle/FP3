@@ -10,4 +10,5 @@ git add *
 git commit -a --no-edit -m "Updating presentation materials"
 git pull -s ours --no-edit
 git push
+sleep 1  # Need to load the page in gh-pages before flipping back to the working branch
 git checkout $working_git_branch
