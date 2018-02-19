@@ -40,10 +40,10 @@ Upon successful completion of this lesson, you will be able to:
 New Words or Concepts
 =====================
 
-* Itertools
-* Functools
 * Closure
 * Curry
+* Itertools
+* Functools
 
 
 Required Reading
