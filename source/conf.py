@@ -61,7 +61,18 @@ master_doc = 'index'
 # General information about the project.
 project = 'Lesson Plan'
 
-author = "Brian Dorsey, Christopher Barker, Christy Heaton, Cris Ewing, Jon Jacky, Joseph Schilz, Maria McKinley, Rick Riehle"
+authors = (
+    "Brian Dorsey",
+    "Christopher Barker",
+    "Christy Heaton",
+    "Cris Ewing",
+    "Jon Jacky",
+    "Joseph Schilz",
+    "Maria McKinley",
+    "Rick Riehle",
+)
+
+author = ', '.join(sorted(authors))
 
 copyright = (
     "{}, University of Washington, {}. Creative Commons Attribution-ShareAlike 3.0 license".format(
