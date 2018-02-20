@@ -136,17 +136,17 @@
 <p>Thus, objects (or classes) and closures are similar, but different.</p>
 <p>This is the general form of a closure:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">closure</span><span class="p">(</span><span class="n">internal_state</span><span class="p">):</span>  <span class="c1"># line 1</span>
-    <span class="k">def</span> <span class="nf">return_func</span><span class="p">(</span><span class="n">arguments</span><span class="p">):</span>  <span class="c1"># line 2</span>
+    <span class="k">def</span> <span class="nf">return_function</span><span class="p">(</span><span class="n">arguments</span><span class="p">):</span>  <span class="c1"># line 2</span>
         <span class="k">return</span> <span class="n">internal_state</span> <span class="n">combined</span> <span class="k">with</span> <span class="n">arguments</span>  <span class="c1"># line 3</span>
     <span class="k">return</span> <span class="n">return_function</span>  <span class="c1"># line 4</span>
 </pre></div>
 </div>
 <p>Let’s unpack that.</p>
 <ol class="arabic simple">
-<li>The closure is defined like any other function with a name and arguments.  In this case the name of the function is <cite>closure</cite> and its arguments are <cite>internal_state</cite></li>
-<li>Inside the closure another function is defined.  It too takes arguments.  In this case its name is return_func, because <em>this internally defined function itself will be returned by the closure.</em></li>
-<li>When calculating a return value the internal function, <cite>return_func</cite>, uses both the internal state passed into the closure on line 1 when the closure was first defined, and also the arguments that will be passed into it later when it is used as a stand-alone function.</li>
-<li>The closure uses the <em>internally defined</em> function, <cite>return_func</cite> for its return value.  Thus, just as a Class is a template or factory for creating Objects, a Closure is a template or factory for creating stand-alone methods.</li>
+<li>The closure is defined like any other function with a name and arguments.  In this case the name of the function is <code class="docutils literal"><span class="pre">closure</span></code> and its arguments are <code class="docutils literal"><span class="pre">internal_state</span></code>.</li>
+<li>Inside the closure another function is defined.  It too takes arguments.  In this case its name is <code class="docutils literal"><span class="pre">return_function</span></code>, because <em>this internally defined function itself will be returned by the closure.</em></li>
+<li>When calculating a return value the internal function, <code class="docutils literal"><span class="pre">return_function</span></code>, uses both the <code class="docutils literal"><span class="pre">internal</span> <span class="pre">state</span> <span class="pre">passed</span></code> into the closure on line 1 when the closure was first defined, and also the arguments that will be passed into it later when it is used as a stand-alone function.</li>
+<li>The closure uses the <em>internally defined</em> function, <code class="docutils literal"><span class="pre">return_function</span></code> for its return value.  Thus, just as a class is a template or factory for creating objects, a closure is a template or factory for creating stand-alone methods.</li>
 </ol>
 <div class="section" id="functions-within-functions">
 <h4>Functions Within Functions<a class="headerlink" href="#functions-within-functions" title="Permalink to this headline">¶</a></h4>
