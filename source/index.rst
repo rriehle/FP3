@@ -63,7 +63,7 @@ Required Reading
 
   | https://en.wikipedia.org/wiki/Currying
 
-* Scope or Lexical Scope in Python
+* Scope or *Lexical Scope* in Python
 
   | `https://en.wikipedia.org/wiki/Scope_(computer_science)#Python <https://en.wikipedia.org/wiki/Scope_(computer_science)#Python>`_
 
