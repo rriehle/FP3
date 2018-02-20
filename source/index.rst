@@ -76,7 +76,6 @@ Optional Reading
 Content
 *******
 
-
 Closures
 ========
 
