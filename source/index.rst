@@ -42,6 +42,7 @@ New Words or Concepts
 
 * Closure
 * Curry
+* Scope
 * Itertools
 * Functools
 
@@ -51,16 +52,20 @@ Required Reading
 
 * Functional Programming Modules
 
-  | https://docs.python.org/3/library/functional.html
+    | https://docs.python.org/3/library/functional.html
 
-*  Closures
+* Closures
 
-   | https://en.wikipedia.org/wiki/Closure_(computer_programming)
-   | http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent
+    | https://en.wikipedia.org/wiki/Closure_(computer_programming)
+    | http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent
 
-*  Currying
+* Currying
 
-   | https://en.wikipedia.org/wiki/Currying
+    | https://en.wikipedia.org/wiki/Currying
+
+* Scope or Lexical Scope in Python
+
+    | https://en.wikipedia.org/wiki/Scope_(computer_science)#Python
 
 
 Optional Reading
@@ -92,6 +97,19 @@ Closures
 
 -- http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent
 
+Objects can, and generally do, carry mutable state.  Closures can, and generally do, carry mutable state.
+
+Objects have methods.  Closures *are* methods.
+
+Objects control access to their attributes --- their internal state -- through Properties and Python's lexical scoping rules.  Closures tend to close around their internal state by their very nature.
+
+Thus, objects (or classes) and closures are similar, but different.
+
+The general form of a closure is this:
+
+.. code-block:: python3
+
+    source
 
 
 Functions Within Functions
