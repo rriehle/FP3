@@ -117,10 +117,10 @@ This is the general form of a closure:
 
 .. code-block:: python
 
-1    def closure(internal_state):
-2        def return_func(arguments):
-3            return internal_state combined with arguments
-4        return return_function
+    def closure(internal_state):  # line 1
+        def return_func(arguments):  # line 2
+            return internal_state combined with arguments  # line 3
+        return return_function  # line 4
 
 Let's unpack that.
 
