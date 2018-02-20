@@ -109,15 +109,25 @@ What exactly are Closures, these mysterious things that offer programming enligh
 * Closures can, and often do, carry mutable state.
 
 * Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules, by default however object attributes are externally accessible.
-* Closures by their very nature tend to close around their internal state and thereby prevent external access.
+* Closures by their very nature tend to close around their internal state and thereby prevent external access, thus in terms of access to internal attributes this is the opposite of the default behavior of an object.
 
 Thus, objects (or classes) and closures are similar, but different.
 
 This is the general form of a closure:
 
-.. code-block:: python3
+.. code-block:: python
 
-    source
+1    def closure(internal_state):
+2        def return_func(arguments):
+3            return internal_state combined with arguments
+4        return return_function
+
+Let's unpack that.
+
+1.  The closure is defined like any other function with a name and arguments.  In this case the name of the function is `closure` and its arguments are `internal_state`
+2.  Inside the closure another function is defined.  It too takes arguments.  In this case its name is return_func, because *this internally defined function itself will be returned by the closure.*
+3.  When calculating a return value the internal function, `return_func`, uses both the internal state passed into the closure on line 1 when the closure was first defined, and also the arguments that will be passed into it later when it is used as a stand-alone function.
+4.  The closure uses the *internally defined* function, `return_func` for its return value.  Thus, just as a Class is a template or factory for creating Objects, a Closure is a template or factory for creating stand-alone methods.
 
 
 Functions Within Functions
