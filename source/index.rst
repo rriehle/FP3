@@ -56,7 +56,7 @@ Required Reading
 
 * Closures
 
-  | https://en.wikipedia.org/wiki/Closure_(computer_programming)
+  | `https://en.wikipedia.org/wiki/Closure_(computer_programming) <https://en.wikipedia.org/wiki/Closure_(computer_programming)>`_
   | http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent
 
 * Currying
@@ -65,7 +65,7 @@ Required Reading
 
 * Scope or Lexical Scope in Python
 
-  | https://en.wikipedia.org/wiki/Scope_(computer_science)#Python
+  | `https://en.wikipedia.org/wiki/Scope_(computer_science)#Python <https://en.wikipedia.org/wiki/Scope_(computer_science)#Python>`_
 
 
 Optional Reading
