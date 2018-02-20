@@ -53,6 +53,14 @@ Required Reading
 
   | https://docs.python.org/3/library/functional.html
 
+*  Closures
+
+   | https://en.wikipedia.org/wiki/Closure_(computer_programming)
+
+*  Currying
+
+   | https://en.wikipedia.org/wiki/Currying
+
 
 Optional Reading
 ================
@@ -62,10 +70,6 @@ Optional Reading
 * Lott, S. (2015) Chapter 8. The Itertools Module. In Functional Python Programming.
 
 * Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.
-
-*  Closures
-
-   | https://en.wikipedia.org/wiki/Closure_(computer_programming)
 
 *  What is the advantage of currying?
 
@@ -164,8 +168,6 @@ Currying
 ========
 
 "Currying" is a special case of closures:
-
-`Currying on Wikipedia <https://en.wikipedia.org/wiki/Currying>`_
 
 The idea behind currying is that you may have a function with a number of parameters, and you want to make a specialized version that function with a couple parameters pre-set.
 
