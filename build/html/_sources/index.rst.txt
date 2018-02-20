@@ -37,8 +37,10 @@ Learning Objectives
 Upon successful completion of this lesson, you will be able to:
 
 * define a closure as a factory for creating stand-alone methods.
-* curry a function to reduce its arity, its number of arguments, and thereby make it suitable for functional composition.
-*
+* describe the arity of a function.
+* curry a function to reduce its arity, its number of arguments in particular, and thereby make it suitable for functional composition.
+* use the Itertools library.
+* use the Functools library.
 
 
 New Words or Concepts
