@@ -118,16 +118,16 @@ This is the general form of a closure:
 .. code-block:: python
 
     def closure(internal_state):  # line 1
-        def return_func(arguments):  # line 2
+        def return_function(arguments):  # line 2
             return internal_state combined with arguments  # line 3
         return return_function  # line 4
 
 Let's unpack that.
 
-1.  The closure is defined like any other function with a name and arguments.  In this case the name of the function is `closure` and its arguments are `internal_state`
-2.  Inside the closure another function is defined.  It too takes arguments.  In this case its name is return_func, because *this internally defined function itself will be returned by the closure.*
-3.  When calculating a return value the internal function, `return_func`, uses both the internal state passed into the closure on line 1 when the closure was first defined, and also the arguments that will be passed into it later when it is used as a stand-alone function.
-4.  The closure uses the *internally defined* function, `return_func` for its return value.  Thus, just as a Class is a template or factory for creating Objects, a Closure is a template or factory for creating stand-alone methods.
+1.  The closure is defined like any other function with a name and arguments.  In this case the name of the function is ``closure`` and its arguments are ``internal_state``.
+2.  Inside the closure another function is defined.  It too takes arguments.  In this case its name is ``return_function``, because *this internally defined function itself will be returned by the closure.*
+3.  When calculating a return value the internal function, ``return_function``, uses both the ``internal state passed`` into the closure on line 1 when the closure was first defined, and also the arguments that will be passed into it later when it is used as a stand-alone function.
+4.  The closure uses the *internally defined* function, ``return_function`` for its return value.  Thus, just as a class is a template or factory for creating objects, a closure is a template or factory for creating stand-alone methods.
 
 
 Functions Within Functions
