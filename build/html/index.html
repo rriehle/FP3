@@ -80,24 +80,26 @@
 <div class="line"><a class="reference external" href="https://docs.python.org/3/library/functional.html">https://docs.python.org/3/library/functional.html</a></div>
 </div>
 </li>
+<li><p class="first">Closures</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://en.wikipedia.org/wiki/Closure_(computer_programming">https://en.wikipedia.org/wiki/Closure_(computer_programming</a>)</div>
+<div class="line"><a class="reference external" href="http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent">http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent</a></div>
+</div>
+</li>
+<li><p class="first">Currying</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://en.wikipedia.org/wiki/Currying">https://en.wikipedia.org/wiki/Currying</a></div>
+</div>
+</li>
 </ul>
 </div>
 <div class="section" id="optional-reading">
 <h3>Optional Reading<a class="headerlink" href="#optional-reading" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p class="first">Lott, S. (2015) Chapter 14. The PyMonad Library. Functional composition and currying. In Functional Python Programming.</p>
-</li>
-<li><p class="first">Lott, S. (2015) Chapter 8. The Itertools Module. In Functional Python Programming.</p>
-</li>
-<li><p class="first">Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.</p>
-</li>
-<li><p class="first">Closures</p>
-<div class="line-block">
-<div class="line"><a class="reference external" href="https://en.wikipedia.org/wiki/Closure_(computer_programming">https://en.wikipedia.org/wiki/Closure_(computer_programming</a>)</div>
-</div>
-</li>
-<li><p class="first">What is the advantage of currying?</p>
-</li>
+<ul class="simple">
+<li>Lott, S. (2015) Chapter 14. The PyMonad Library. Functional composition and currying. In Functional Python Programming.</li>
+<li>Lott, S. (2015) Chapter 8. The Itertools Module. In Functional Python Programming.</li>
+<li>Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.</li>
+<li>What is the advantage of currying?</li>
 </ul>
 <blockquote>
 <div><div class="line-block">
@@ -110,7 +112,10 @@
 <h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="closures">
 <h3>Closures<a class="headerlink" href="#closures" title="Permalink to this headline">¶</a></h3>
-<p>“Closures” is a cool CS term for what is really just defining functions on the fly with some saved state. You can find a “proper” definition here:</p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>The venerable master Qc Na was walking with his student, Anton. Hoping to prompt the master into a discussion, Anton said “Master, I have heard that objects (and classes) are a very good thing - is this true?” Qc Na looked pityingly at his student and replied, “Foolish pupil - objects are merely a poor man’s closures.”</p>
+<p>Chastised, Anton took his leave from his master and returned to his cell, intent on studying closures. He carefully read the entire “Lambda: The Ultimate…” series of papers and its cousins, and implemented a small Scheme interpreter with a closure-based object system. He learned much, and looked forward to informing his master of his progress.</p>
+<p>On his next walk with Qc Na, Anton attempted to impress his master by saying “Master, I have diligently studied the matter, and now understand that objects are truly a poor man’s closures.” Qc Na responded by hitting Anton with his stick, saying “When will you learn? Closures are a poor man’s object.” At that moment, Anton became enlightened.*</p>
+<p>– <a class="reference external" href="http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent">http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent</a></p>
 <div class="section" id="functions-within-functions">
 <h4>Functions Within Functions<a class="headerlink" href="#functions-within-functions" title="Permalink to this headline">¶</a></h4>
 <p>We’ve been defining functions within functions to explore namespace scope.  But functions are “first class objects” in python, so we can not only define them and call them, but we can assign names to them and pass them around like any other object.</p>
@@ -171,7 +176,6 @@
 <div class="section" id="currying">
 <h3>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h3>
 <p>“Currying” is a special case of closures:</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Currying">Currying on Wikipedia</a></p>
 <p>The idea behind currying is that you may have a function with a number of parameters, and you want to make a specialized version that function with a couple parameters pre-set.</p>
 <div class="section" id="real-world-example">
 <h4>Real world Example<a class="headerlink" href="#real-world-example" title="Permalink to this headline">¶</a></h4>
