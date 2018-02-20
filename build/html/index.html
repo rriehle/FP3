@@ -68,6 +68,7 @@
 <ul class="simple">
 <li>Closure</li>
 <li>Curry</li>
+<li>Scope</li>
 <li>Itertools</li>
 <li>Functools</li>
 </ul>
@@ -76,20 +77,33 @@
 <h3>Required Reading<a class="headerlink" href="#required-reading" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">Functional Programming Modules</p>
-<div class="line-block">
+<blockquote>
+<div><div class="line-block">
 <div class="line"><a class="reference external" href="https://docs.python.org/3/library/functional.html">https://docs.python.org/3/library/functional.html</a></div>
 </div>
+</div></blockquote>
 </li>
 <li><p class="first">Closures</p>
-<div class="line-block">
+<blockquote>
+<div><div class="line-block">
 <div class="line"><a class="reference external" href="https://en.wikipedia.org/wiki/Closure_(computer_programming">https://en.wikipedia.org/wiki/Closure_(computer_programming</a>)</div>
 <div class="line"><a class="reference external" href="http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent">http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent</a></div>
 </div>
+</div></blockquote>
 </li>
 <li><p class="first">Currying</p>
-<div class="line-block">
+<blockquote>
+<div><div class="line-block">
 <div class="line"><a class="reference external" href="https://en.wikipedia.org/wiki/Currying">https://en.wikipedia.org/wiki/Currying</a></div>
 </div>
+</div></blockquote>
+</li>
+<li><p class="first">Scope or Lexical Scope in Python</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><a class="reference external" href="https://en.wikipedia.org/wiki/Scope_(computer_science">https://en.wikipedia.org/wiki/Scope_(computer_science</a>)#Python</div>
+</div>
+</div></blockquote>
 </li>
 </ul>
 </div>
@@ -118,6 +132,14 @@
 <p><em>Chastised, Anton took his leave from his master and returned to his cell, intent on studying closures. He carefully read the entire “Lambda: The Ultimate…” series of papers and its cousins, and implemented a small Scheme interpreter with a closure-based object system. He learned much, and looked forward to informing his master of his progress.</em></p>
 <p><em>On his next walk with Qc Na, Anton attempted to impress his master by saying “Master, I have diligently studied the matter, and now understand that objects are truly a poor man’s closures.” Qc Na responded by hitting Anton with his stick, saying “When will you learn? Closures are a poor man’s object.” At that moment, Anton became enlightened.</em></p>
 <p>– <a class="reference external" href="http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent">http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent</a></p>
+<p>Objects can, and generally do, carry mutable state.  Closures can, and generally do, carry mutable state.</p>
+<p>Objects have methods.  Closures <em>are</em> methods.</p>
+<p>Objects control access to their attributes — their internal state – through Properties and Python’s lexical scoping rules.  Closures tend to close around their internal state by their very nature.</p>
+<p>Thus, objects (or classes) and closures are similar, but different.</p>
+<p>The general form of a closure is this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">source</span>
+</pre></div>
+</div>
 <div class="section" id="functions-within-functions">
 <h4>Functions Within Functions<a class="headerlink" href="#functions-within-functions" title="Permalink to this headline">¶</a></h4>
 <p>We’ve been defining functions within functions to explore namespace scope.  But functions are “first class objects” in python, so we can not only define them and call them, but we can assign names to them and pass them around like any other object.</p>
