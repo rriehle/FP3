@@ -99,9 +99,14 @@ Closures
 
 What exactly are Closures, these mysterious things that offer programming enlightenment?  Before we consider a formal definition, let's continue to compare and contrast closures with objects.
 
-* Objects can, and generally do, carry mutable state.  Closures can, and generally do, carry mutable state.
-* Objects have methods.  Closures *are* methods.
-* Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules.  Closures tend to close around their internal state --- and thereby prevent access --- by their very nature.
+* Objects can, and generally do, carry mutable state.
+* Closures can, and generally do, carry mutable state.
+
+* Objects have methods.
+* Closures *are* methods.
+
+* Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules.
+* Closures tend to close around their internal state --- and thereby prevent access --- by their very nature.
 
 Thus, objects (or classes) and closures are similar, but different.
 
