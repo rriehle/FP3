@@ -124,9 +124,12 @@
 <p><em>Chastised, Anton took his leave from his master and returned to his cell, intent on studying closures. He carefully read the entire “Lambda: The Ultimate…” series of papers and its cousins, and implemented a small Scheme interpreter with a closure-based object system. He learned much, and looked forward to informing his master of his progress.</em></p>
 <p><em>On his next walk with Qc Na, Anton attempted to impress his master by saying “Master, I have diligently studied the matter, and now understand that objects are truly a poor man’s closures.” Qc Na responded by hitting Anton with his stick, saying “When will you learn? Closures are a poor man’s object.” At that moment, Anton became enlightened.</em></p>
 <p>– <a class="reference external" href="http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent">http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent</a></p>
-<p>Objects can, and generally do, carry mutable state.  Closures can, and generally do, carry mutable state.</p>
-<p>Objects have methods.  Closures <em>are</em> methods.</p>
-<p>Objects control access to their attributes — their internal state – through Properties and Python’s lexical scoping rules.  Closures tend to close around their internal state by their very nature.</p>
+<p>What exactly are Closures, these mysterious things that offer programming enlightenment?  Before we consider a formal definition, let’s continue to compare and contrast closures with objects.</p>
+<ul class="simple">
+<li>Objects can, and generally do, carry mutable state.  Closures can, and generally do, carry mutable state.</li>
+<li>Objects have methods.  Closures <em>are</em> methods.</li>
+<li>Objects control access to their attributes — their internal state — through Properties and Python’s lexical scoping rules.  Closures tend to close around their internal state — and thereby prevent access — by their very nature.</li>
+</ul>
 <p>Thus, objects (or classes) and closures are similar, but different.</p>
 <p>The general form of a closure is this:</p>
 <div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">source</span>
