@@ -1,0 +1,369 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Functional Programming 3 &#8212; Lesson Plan 1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="functional-programming-3">
+<h1>Functional Programming 3<a class="headerlink" href="#functional-programming-3" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>[1-3 paragraphs introducing topic(s)]</p>
+<p>For the functional programming modules, this lesson included, we recommend Functional Python Programming by Steven Lott.</p>
+<div class="line-block">
+<div class="line">Publisher: Packt Publishing</div>
+<div class="line">Pub. Date: January 31, 2015</div>
+<div class="line">Web ISBN-13: 978-1-78439-761-6</div>
+<div class="line">Print ISBN-13: 978-1-78439-699-2</div>
+<div class="line"><a class="reference external" href="http://bit.ly/2azI62S">http://bit.ly/2azI62S</a></div>
+</div>
+<p>Each lesson’s optional readings will draw from this text.</p>
+<div class="section" id="learning-objectives">
+<h3>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h3>
+<p>Upon successful completion of this lesson, you will be able to:</p>
+<ul class="simple">
+<li></li>
+<li></li>
+</ul>
+</div>
+<div class="section" id="new-words-or-concepts">
+<h3>New Words or Concepts<a class="headerlink" href="#new-words-or-concepts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Closure</li>
+<li>Curry</li>
+<li>Itertools</li>
+<li>Functools</li>
+</ul>
+</div>
+<div class="section" id="required-reading">
+<h3>Required Reading<a class="headerlink" href="#required-reading" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Functional Programming Modules</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://docs.python.org/3/library/functional.html">https://docs.python.org/3/library/functional.html</a></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="optional-reading">
+<h3>Optional Reading<a class="headerlink" href="#optional-reading" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Lott, S. (2015) Chapter 14. The PyMonad Library. Functional composition and currying. In Functional Python Programming.</p>
+</li>
+<li><p class="first">Lott, S. (2015) Chapter 8. The Itertools Module. In Functional Python Programming.</p>
+</li>
+<li><p class="first">Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.</p>
+</li>
+<li><p class="first">Closures</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://en.wikipedia.org/wiki/Closure_(computer_programming">https://en.wikipedia.org/wiki/Closure_(computer_programming</a>)</div>
+</div>
+</li>
+<li><p class="first">What is the advantage of currying?</p>
+</li>
+</ul>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><a class="reference external" href="https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying">https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying</a></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="content">
+<h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="closures">
+<h3>Closures<a class="headerlink" href="#closures" title="Permalink to this headline">¶</a></h3>
+<p>“Closures” is a cool CS term for what is really just defining functions on the fly with some saved state. You can find a “proper” definition here:</p>
+<div class="section" id="functions-within-functions">
+<h4>Functions Within Functions<a class="headerlink" href="#functions-within-functions" title="Permalink to this headline">¶</a></h4>
+<p>We’ve been defining functions within functions to explore namespace scope.  But functions are “first class objects” in python, so we can not only define them and call them, but we can assign names to them and pass them around like any other object.</p>
+<p>So after we define a function within a function, we can actually return that function as an object:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">counter</span><span class="p">(</span><span class="n">start_at</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">start_at</span>
+    <span class="k">def</span> <span class="nf">incr</span><span class="p">():</span>
+        <span class="n">nonlocal</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">count</span>
+    <span class="k">return</span> <span class="n">incr</span>
+</pre></div>
+</div>
+<p>So this looks a lot like the previous examples, but we are returning the function that was defined inside the function.</p>
+<div class="section" id="what-s-going-on-here">
+<h5>What’s going on here?<a class="headerlink" href="#what-s-going-on-here" title="Permalink to this headline">¶</a></h5>
+<p>We have passed the <code class="docutils literal"><span class="pre">start_at</span></code> value into the <code class="docutils literal"><span class="pre">counter</span></code> function.</p>
+<p>We have stored it in <code class="docutils literal"><span class="pre">counter</span></code>’s scope as a local variable: <code class="docutils literal"><span class="pre">count</span></code></p>
+<p>Then we defined a function, <code class="docutils literal"><span class="pre">incr</span></code> that adds one to the value of count, and returns that value.</p>
+<p>Note that we declared <code class="docutils literal"><span class="pre">count</span></code> to be nonlocal in <code class="docutils literal"><span class="pre">incr</span></code>’s scope, so that it would be the same <code class="docutils literal"><span class="pre">count</span></code> that’s in counter’s scope.</p>
+<p>What type of object do you get when you call <code class="docutils literal"><span class="pre">counter()</span></code>?</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [37]: </span><span class="n">c</span> <span class="o">=</span> <span class="n">counter</span><span class="p">(</span><span class="n">start_at</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="gp">In [38]: </span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="gh">Out[38]: </span><span class="go">function</span>
+</pre></div>
+</div>
+<p>So we get a function back – makes sense. The <code class="docutils literal"><span class="pre">def</span></code> defines a function, and that function is what’s getting returned.</p>
+<p>Being a function, we can, of course, call it:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [39]: </span><span class="n">c</span><span class="p">()</span>
+<span class="gh">Out[39]: </span><span class="go">6</span>
+
+<span class="gp">In [40]: </span><span class="n">c</span><span class="p">()</span>
+<span class="gh">Out[40]: </span><span class="go">7</span>
+</pre></div>
+</div>
+<p>Each time is it called, it increments the value by one – as you’d expect.</p>
+<p>But what happens if we call <code class="docutils literal"><span class="pre">counter()</span></code> multiple times?</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [41]: </span><span class="n">c1</span> <span class="o">=</span> <span class="n">counter</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="gp">In [42]: </span><span class="n">c2</span> <span class="o">=</span> <span class="n">counter</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="gp">In [43]: </span><span class="n">c1</span><span class="p">()</span>
+<span class="gh">Out[43]: </span><span class="go">6</span>
+
+<span class="gp">In [44]: </span><span class="n">c2</span><span class="p">()</span>
+<span class="gh">Out[44]: </span><span class="go">11</span>
+</pre></div>
+</div>
+<p>So each time <code class="docutils literal"><span class="pre">counter()</span></code> is called, a new <code class="docutils literal"><span class="pre">incr</span></code> function is created. But also, a new namespace is created, that holds the count name. So the new <code class="docutils literal"><span class="pre">incr</span></code> function is holding a reference to that new count name.</p>
+<p>This is what makes in a “closure” – it carries with it the scope in which is was created.</p>
+<p>The returned <code class="docutils literal"><span class="pre">incr</span></code> function is a “curried” function – a function with some parameters pre-specified.</p>
+<p>Let’s experiment a bit more with these ideas:</p>
+<p><code class="xref download docutils literal"><span class="pre">play_with_scope.py</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="currying">
+<h3>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h3>
+<p>“Currying” is a special case of closures:</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Currying">Currying on Wikipedia</a></p>
+<p>The idea behind currying is that you may have a function with a number of parameters, and you want to make a specialized version that function with a couple parameters pre-set.</p>
+<div class="section" id="real-world-example">
+<h4>Real world Example<a class="headerlink" href="#real-world-example" title="Permalink to this headline">¶</a></h4>
+<p>I was writing some code to compute the concentration of a contaminant in a river, as it was reduced by exponential decay, defined by a half-life:</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Half-life">https://en.wikipedia.org/wiki/Half-life</a></p>
+<p>So I wanted a function that would compute how much the concentration would reduce as a function of time – that is:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">scale_factor</span>
+</pre></div>
+</div>
+<p>The trick is, how much the concentration would be reduced depends on both time and the half life. And for a given material, and given flow conditions in the river, that half life is pre-determined.  Once you know the half-life, the scale is given by:</p>
+<p>scale = 0.5 ** (time / (half_life))</p>
+<p>So to compute the scale, I could pass that half-life in each time I called the function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">half_life</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="p">(</span><span class="n">time</span> <span class="o">/</span> <span class="p">(</span><span class="n">half_life</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>But this is a bit klunky – I need to keep passing that half_life around, even though it isn’t changing. And there are places, like <code class="docutils literal"><span class="pre">map</span></code> that require a function that takes only one argument!</p>
+<p>What if I could create a function, on the fly, that had a particular half-life “baked in”?</p>
+<p><em>Enter Currying</em> – Currying is a technique where you reduce the number of parameters that function takes, creating a specialized function with one or more of the original parameters set to a particular value. Here is that technique, applied to the half-life decay problem:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_scale_fun</span><span class="p">(</span><span class="n">half_life</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">half_life</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="p">(</span><span class="n">time</span> <span class="o">/</span> <span class="n">half_life</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">half_life</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> This is simple enough to use a lambda for a bit more compact code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_scale_fun</span><span class="p">(</span><span class="n">half_life</span><span class="p">):</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">time</span><span class="p">:</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="p">(</span><span class="n">time</span> <span class="o">/</span> <span class="n">half_life</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="using-the-curried-function">
+<h5>Using the Curried Function<a class="headerlink" href="#using-the-curried-function" title="Permalink to this headline">¶</a></h5>
+<p>Create a scale function with a half-life of one hour:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="n">scale</span> <span class="o">=</span> <span class="n">get_scale_fun</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="gp">In [9]: </span><span class="p">[</span><span class="n">scale</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+<span class="gh">Out[9]: </span><span class="go">[1.0, 0.5, 0.25, 0.125, 0.0625, 0.03125, 0.015625]</span>
+</pre></div>
+</div>
+<p>The value is reduced by half every hour.</p>
+<p>Now create one with a half life of 2 hours:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">scale</span> <span class="o">=</span> <span class="n">get_scale_fun</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="gp">In [11]: </span><span class="p">[</span><span class="n">scale</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+<span class="gh">Out[11]:</span>
+<span class="go">[1.0,</span>
+<span class="go"> 0.7071067811865476,</span>
+<span class="go"> 0.5,</span>
+<span class="go"> 0.3535533905932738,</span>
+<span class="go"> 0.25,</span>
+<span class="go"> 0.1767766952966369,</span>
+<span class="go"> 0.125]</span>
+</pre></div>
+</div>
+<p>And the value is reduced by half every two hours…</p>
+<p>And it can be used with <code class="docutils literal"><span class="pre">map</span></code>, too:</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)))</span>
+<span class="gh">Out[13]:</span>
+<span class="go">[1.0,</span>
+<span class="go"> 0.7071067811865476,</span>
+<span class="go"> 0.5,</span>
+<span class="go"> 0.3535533905932738,</span>
+<span class="go"> 0.25,</span>
+<span class="go"> 0.1767766952966369,</span>
+<span class="go"> 0.125]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="functools-partial">
+<h4><code class="docutils literal"><span class="pre">functools.partial</span></code><a class="headerlink" href="#functools-partial" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal"><span class="pre">functools</span></code> module in the standard library provides utilities for working with functions:</p>
+<p><a class="reference external" href="https://docs.python.org/3.5/library/functools.html">https://docs.python.org/3.5/library/functools.html</a></p>
+<p>Creating a curried function turns out to be common enough that the <code class="docutils literal"><span class="pre">functools.partial</span></code> function provides an optimized way to do it:</p>
+<p>What functools.partial does is:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Makes a new version of a function with one or more arguments already filled in.</li>
+<li>The new version of a function documents itself.</li>
+</ul>
+</div></blockquote>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponent</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns based raised to the give exponent&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">base</span> <span class="o">**</span> <span class="n">exponent</span>
+</pre></div>
+</div>
+<p>Simple enough. but what if we wanted a specialized <code class="docutils literal"><span class="pre">square</span></code> and <code class="docutils literal"><span class="pre">cube</span></code> function?</p>
+<p>We can use <code class="docutils literal"><span class="pre">functools.partial</span></code> to <em>partially</em> evaluate the function, giving us a specialized version:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">square</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">power</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">power</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quiz">
+<h2>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="activity">
+<h2>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="assignment">
+<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Functional Programming 3</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
+<li><a class="reference internal" href="#new-words-or-concepts">New Words or Concepts</a></li>
+<li><a class="reference internal" href="#required-reading">Required Reading</a></li>
+<li><a class="reference internal" href="#optional-reading">Optional Reading</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#content">Content</a><ul>
+<li><a class="reference internal" href="#closures">Closures</a><ul>
+<li><a class="reference internal" href="#functions-within-functions">Functions Within Functions</a><ul>
+<li><a class="reference internal" href="#what-s-going-on-here">What’s going on here?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#currying">Currying</a><ul>
+<li><a class="reference internal" href="#real-world-example">Real world Example</a><ul>
+<li><a class="reference internal" href="#using-the-curried-function">Using the Curried Function</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functools-partial"><code class="docutils literal"><span class="pre">functools.partial</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quiz">Quiz</a></li>
+<li><a class="reference internal" href="#activity">Activity</a></li>
+<li><a class="reference internal" href="#assignment">Assignment</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, University of Washington, Brian Dorsey, Christopher Barker, Christy Heaton, Cris Ewing, Jon Jacky, Joseph Schilz, Maria McKinley, Rick Riehle. Creative Commons Attribution-ShareAlike 3.0 license.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
