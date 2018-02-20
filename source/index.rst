@@ -11,6 +11,9 @@ Functional Programming 3
    :maxdepth: 2
    :caption: Contents:
 
+.. |br| raw:: html
+
+    <br />
 
 ************
 Introduction
@@ -100,13 +103,11 @@ Closures
 What exactly are Closures, these mysterious things that offer programming enlightenment?  Before we consider a formal definition, let's continue to compare and contrast closures with objects.
 
 * Objects have methods.
-* Closures *are* methods.
-  |
-
+* Closures *are* methods --- they are defined and behave like functions, but like object methods they carry internal state and take it into account when returning results.
+|br|
 * Objects can, and generally do, carry mutable state.
 * Closures can, and often do, carry mutable state.
-  |
-
+|br|
 * Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules, by default however object attributes are externally accessible.
 * Closures tend to close around their internal state --- and thereby prevent external access --- by their very nature.
 
