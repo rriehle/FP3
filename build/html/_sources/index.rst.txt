@@ -36,7 +36,8 @@ Learning Objectives
 
 Upon successful completion of this lesson, you will be able to:
 
-*
+* define a closure as a factory for creating stand-alone methods.
+* curry a function to reduce its arity, its number of arguments, and thereby make it suitable for functional composition.
 *
 
 
@@ -44,8 +45,10 @@ New Words or Concepts
 =====================
 
 * Closure
-* Curry
 * Scope
+* Curry
+* Arity
+* Functional Composition
 * Itertools
 * Functools
 
@@ -62,13 +65,15 @@ Required Reading
   | `https://en.wikipedia.org/wiki/Closure_(computer_programming) <https://en.wikipedia.org/wiki/Closure_(computer_programming)>`_
   | http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent
 
-* Currying
-
-  | https://en.wikipedia.org/wiki/Currying
-
 * Scope or *Lexical Scope* in Python
 
   | `https://en.wikipedia.org/wiki/Scope_(computer_science)#Python <https://en.wikipedia.org/wiki/Scope_(computer_science)#Python>`_
+
+* Currying
+
+  | https://en.wikipedia.org/wiki/Currying
+  | https://en.wikipedia.org/wiki/Arity
+  | `https://en.wikipedia.org/wiki/Function_composition_(computer_science) <https://en.wikipedia.org/wiki/Function_composition_(computer_science)>`_
 
 
 Optional Reading
