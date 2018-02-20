@@ -11,15 +11,17 @@ Functional Programming 3
    :maxdepth: 2
    :caption: Contents:
 
-.. |br| raw:: html
-
-    <br />
 
 ************
 Introduction
 ************
 
-[1-3 paragraphs introducing topic(s)]
+In this third lesson on functional programming follow a string of related techniques.  We first look at closures and compare them to classes and objects and thereby bridge the gap between functional programming and object oriented programming.  We then see how closures form the basis of function currying, and in turn how function currying facilitates functional composition.
+
+We wrap up our series of functional programming lessons with an overview of the Itertools and Functools libraries which facilitates the techniques covered across all three lessons.
+
+Recommended Text
+================
 
 For the functional programming modules, this lesson included, we recommend Functional Python Programming by Steven Lott.
 
@@ -116,7 +118,7 @@ What exactly are Closures, these mysterious things that offer programming enligh
 * Closures can, and often do, carry mutable state.
 
 * Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules, by default however object attributes are externally accessible.
-* Closures by their very nature tend to close around their internal state and thereby prevent external access, thus in terms of access to internal attributes this is the opposite of the default behavior of an object.
+* Closures by nature tend to close around their internal state and thereby prevent external access, thus in terms of access to internal state, internal attributes, this is the opposite of the default behavior of an object.  In accordance with Python's Consenting Adults policy a closure's internal state is still accessible via its ``__closure__`` dunder, but this violates the spirit of a closure --- so do so at your own risk.
 
 Thus, objects (or classes) and closures are similar, but different.
 
@@ -129,7 +131,7 @@ This is the general form of a closure:
             return internal_state combined with arguments  # line 3
         return return_function  # line 4
 
-Let's unpack that.
+Let's unpack that line by line.
 
 1.  The closure is defined like any other function with a name and arguments.  In this case the name of the function is ``closure`` and its arguments are ``internal_state``.
 2.  Inside the closure another function is defined.  It too takes arguments.  In this case its name is ``return_function``, because *this internally defined function itself will be returned by the closure.*
