@@ -76,6 +76,7 @@ Optional Reading
 Content
 *******
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 Closures and Function Currying
@@ -399,6 +400,8 @@ A side note: function parameters are in a functions local scope, jsut as though 
     In [29]: fun(1,2,3)
     dict_keys(['z', 'y', 'x'])
 
+=======
+>>>>>>> rriehle
 =======
 >>>>>>> rriehle
 Closures
