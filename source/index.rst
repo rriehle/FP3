@@ -50,19 +50,22 @@ Required Reading
 ================
 
 * Functional Programming Modules
-https://docs.python.org/3/library/functional.html
+
+  | https://docs.python.org/3/library/functional.html
 
 
 Optional Reading
 ================
 
 * Lott, S. (2015) Chapter 14. The PyMonad Library. Functional composition and currying. In Functional Python Programming.
+
 * Lott, S. (2015) Chapter 8. The Itertools Module. In Functional Python Programming.
+
 * Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.
 
 *  What is the advantage of currying?
-https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
 
+  | https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
 
 
 *******
@@ -71,16 +74,14 @@ Content
 
 
 Closures and Function Currying
-##############################
+==============================
 
 Defining specialized functions on the fly.
 
 Scope
-=====
+-----
 
-In order to get a handle on all this, it's important to understand variable scoping rules in Python.
-
-"Scope" is the word for where in the names in your code are accessible. Another word for a scope is namespace.
+In order to get a handle on this, it's important to understand variable scoping rules in Python.  "Scope" is the word for where the names in your code are accessible. Another word for a scope is namespace.
 
 global
 ------
@@ -614,8 +615,6 @@ We can use ``functools.partial`` to *partially* evaluate the function, giving us
 
     square = partial(power, exponent=2)
     cube = partial(power, exponent=3)
-
-
 
 
 
