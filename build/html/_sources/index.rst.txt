@@ -63,6 +63,10 @@ Optional Reading
 
 * Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.
 
+*  Closures
+
+   | https://en.wikipedia.org/wiki/Closure_(computer_programming)
+
 *  What is the advantage of currying?
 
   | https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
@@ -73,6 +77,7 @@ Content
 *******
 
 
+<<<<<<< HEAD
 Closures and Function Currying
 ==============================
 
@@ -394,17 +399,12 @@ A side note: function parameters are in a functions local scope, jsut as though 
     In [29]: fun(1,2,3)
     dict_keys(['z', 'y', 'x'])
 
+=======
+>>>>>>> rriehle
 Closures
 ========
 
-Now that we have a good handle on namespace scope, we can get to see why this is all really useful.
-
 "Closures" is a cool CS term for what is really just defining functions on the fly with some saved state. You can find a "proper" definition here:
-
-`Closures on Wikipedia <https://en.wikipedia.org/wiki/Closure_(computer_programming)>`_
-
-But I have trouble following that, so we'll look at real world examples to get the idea -- it's actually pretty logical, once you have idea about how scope works in Python.
-
 
 Functions Within Functions
 --------------------------

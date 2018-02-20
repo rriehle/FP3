@@ -84,11 +84,20 @@
 </div>
 <div class="section" id="optional-reading">
 <h3>Optional Reading<a class="headerlink" href="#optional-reading" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Lott, S. (2015) Chapter 14. The PyMonad Library. Functional composition and currying. In Functional Python Programming.</li>
-<li>Lott, S. (2015) Chapter 8. The Itertools Module. In Functional Python Programming.</li>
-<li>Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.</li>
-<li>What is the advantage of currying?</li>
+<ul>
+<li><p class="first">Lott, S. (2015) Chapter 14. The PyMonad Library. Functional composition and currying. In Functional Python Programming.</p>
+</li>
+<li><p class="first">Lott, S. (2015) Chapter 8. The Itertools Module. In Functional Python Programming.</p>
+</li>
+<li><p class="first">Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.</p>
+</li>
+<li><p class="first">Closures</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://en.wikipedia.org/wiki/Closure_(computer_programming">https://en.wikipedia.org/wiki/Closure_(computer_programming</a>)</div>
+</div>
+</li>
+<li><p class="first">What is the advantage of currying?</p>
+</li>
 </ul>
 <blockquote>
 <div><div class="line-block">
@@ -99,16 +108,12 @@
 </div>
 <div class="section" id="content">
 <h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="closures-and-function-currying">
-<h3>Closures and Function Currying<a class="headerlink" href="#closures-and-function-currying" title="Permalink to this headline">¶</a></h3>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Closures and Function Currying
+==============================</p>
 <p>Defining specialized functions on the fly.</p>
-<div class="section" id="scope">
-<h4>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h4>
 <p>In order to get a handle on all this, it’s important to understand variable scoping rules in Python.</p>
 <p>“Scope” is the word for where in the names in your code are accessible. Another word for a scope is namespace.</p>
-</div>
-<div class="section" id="global">
-<h4>global<a class="headerlink" href="#global" title="Permalink to this headline">¶</a></h4>
 <p>The simplest is the global scope. This is the where all the names defined right in your code file are (or in the interpreter).</p>
 <p>You can get the global namespace with the <code class="docutils literal"><span class="pre">globals()</span></code> function, but …</p>
 <p>The Python interpreter defines a handful of names when it starts up, and iPython defines a whole bunch more.  Most of those start with an underscore, so you can filter them out for a more reasonable result:</p>
@@ -156,9 +161,6 @@
 <span class="go">TestClass</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="local">
-<h4>local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h4>
 <p>So that’s the global scope – what creates a new scope?</p>
 <p>A new, “local” scope is created by a function or class definition:</p>
 <p>And there is a build in function to get the names in the local scope, too, so we can use it to show us the names in a function’s local namespace. There isn’t a lot of cruft in the local namespace, so we don’t need a special function to print it.</p>
@@ -203,9 +205,6 @@ dict_keys([‘y’, ‘x’])</p>
 <span class="go">inner scope: dict_keys([&#39;z&#39;, &#39;w&#39;])</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="finding-names">
-<h4>Finding Names<a class="headerlink" href="#finding-names" title="Permalink to this headline">¶</a></h4>
 <p>So there are multiple scopes in play at any point – the local scope, and all the surrounding scopes. When you use a name, python checks in the local scope first, then moves out one by one until it finds the name. So if you define a new name inside a function, it “overrides” the name in any of the outer scopes. But the outer one will be found.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="n">name1</span> <span class="o">=</span> <span class="s2">&quot;this is global&quot;</span>
 
@@ -228,9 +227,6 @@ dict_keys([‘y’, ‘x’])</p>
 </pre></div>
 </div>
 <p>Look carefully to see where each of those names came from. All the print statements are in the inner function, so its local scope is searched first, and then the outer function’s scope, and then the global scope. name1 is only defined in the global scope, so that one is found.</p>
-</div>
-<div class="section" id="the-global-keyword">
-<h4>The global keyword<a class="headerlink" href="#the-global-keyword" title="Permalink to this headline">¶</a></h4>
 <p>global names can be accessed from within functions, but not if that same name is created in the local scope. So you can’t change an immutable object that it outside the local scope:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [37]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 
@@ -267,9 +263,6 @@ dict_keys([‘y’, ‘x’])</p>
 </pre></div>
 </div>
 <p><strong>NOTE:</strong> the use of global is frowned upon – having global variables manipulated in arbitrary other scopes makes for buggy, hard to maintain code!</p>
-</div>
-<div class="section" id="nonlocal-keyword">
-<h4>nonlocal keyword<a class="headerlink" href="#nonlocal-keyword" title="Permalink to this headline">¶</a></h4>
 <p>The other limitation with <code class="docutils literal"><span class="pre">global</span></code> is that there is only one global namespace, so what if you are in a nested scope, and want to get at the value outside the current scope, but not all the way up at the global scope:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 
@@ -340,9 +333,6 @@ dict_keys([‘y’, ‘x’])</p>
 </pre></div>
 </div>
 <p>But it will go up multiple levels in nested scopes:</p>
-</div>
-<div class="section" id="function-parameters">
-<h4>function parameters<a class="headerlink" href="#function-parameters" title="Permalink to this headline">¶</a></h4>
 <p>A side note: function parameters are in a functions local scope, jsut as though they were created there:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="go">    ...:     print(locals().keys())</span>
@@ -352,16 +342,8 @@ dict_keys([‘y’, ‘x’])</p>
 <span class="go">dict_keys([&#39;z&#39;, &#39;y&#39;, &#39;x&#39;])</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="closures">
-<h3>Closures<a class="headerlink" href="#closures" title="Permalink to this headline">¶</a></h3>
-<p>Now that we have a good handle on namespace scope, we can get to see why this is all really useful.</p>
+<hr class="docutils" />
 <p>“Closures” is a cool CS term for what is really just defining functions on the fly with some saved state. You can find a “proper” definition here:</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">Closures on Wikipedia</a></p>
-<p>But I have trouble following that, so we’ll look at real world examples to get the idea – it’s actually pretty logical, once you have idea about how scope works in Python.</p>
-<div class="section" id="functions-within-functions">
-<h4>Functions Within Functions<a class="headerlink" href="#functions-within-functions" title="Permalink to this headline">¶</a></h4>
 <p>We’ve been defining functions within functions to explore namespace scope.  But functions are “first class objects” in python, so we can not only define them and call them, but we can assign names to them and pass them around like any other object.</p>
 <p>So after we define a function within a function, we can actually return that function as an object:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">counter</span><span class="p">(</span><span class="n">start_at</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
@@ -374,8 +356,6 @@ dict_keys([‘y’, ‘x’])</p>
 </pre></div>
 </div>
 <p>So this looks a lot like the previous examples, but we are returning the function that was defined inside the function.</p>
-<div class="section" id="what-s-going-on-here">
-<h5>What’s going on here?<a class="headerlink" href="#what-s-going-on-here" title="Permalink to this headline">¶</a></h5>
 <p>We have passed the <code class="docutils literal"><span class="pre">start_at</span></code> value into the <code class="docutils literal"><span class="pre">counter</span></code> function.</p>
 <p>We have stored it in <code class="docutils literal"><span class="pre">counter</span></code>’s scope as a local variable: <code class="docutils literal"><span class="pre">count</span></code></p>
 <p>Then we defined a function, <code class="docutils literal"><span class="pre">incr</span></code> that adds one to the value of count, and returns that value.</p>
@@ -414,9 +394,6 @@ dict_keys([‘y’, ‘x’])</p>
 <p>The returned <code class="docutils literal"><span class="pre">incr</span></code> function is a “curried” function – a function with some parameters pre-specified.</p>
 <p>Let’s experiment a bit more with these ideas:</p>
 <p><code class="xref download docutils literal"><span class="pre">play_with_scope.py</span></code></p>
-</div>
-</div>
-</div>
 <div class="section" id="currying">
 <h3>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h3>
 <p>“Currying” is a special case of closures:</p>
@@ -554,23 +531,6 @@ dict_keys([‘y’, ‘x’])</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#content">Content</a><ul>
-<li><a class="reference internal" href="#closures-and-function-currying">Closures and Function Currying</a><ul>
-<li><a class="reference internal" href="#scope">Scope</a></li>
-<li><a class="reference internal" href="#global">global</a></li>
-<li><a class="reference internal" href="#local">local</a></li>
-<li><a class="reference internal" href="#finding-names">Finding Names</a></li>
-<li><a class="reference internal" href="#the-global-keyword">The global keyword</a></li>
-<li><a class="reference internal" href="#nonlocal-keyword">nonlocal keyword</a></li>
-<li><a class="reference internal" href="#function-parameters">function parameters</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#closures">Closures</a><ul>
-<li><a class="reference internal" href="#functions-within-functions">Functions Within Functions</a><ul>
-<li><a class="reference internal" href="#what-s-going-on-here">What’s going on here?</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li><a class="reference internal" href="#currying">Currying</a><ul>
 <li><a class="reference internal" href="#real-world-example">Real world Example</a><ul>
 <li><a class="reference internal" href="#using-the-curried-function">Using the Curried Function</a></li>
