@@ -72,7 +72,7 @@ Optional Reading
 
 * Lott, S. (2015) Chapter 10. The Functools Module. In Functional Python Programming.
 
-*  What is the advantage of currying?
+* What is the advantage of currying?
 
   | https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
 
