@@ -52,20 +52,20 @@ Required Reading
 
 * Functional Programming Modules
 
-    | https://docs.python.org/3/library/functional.html
+  | https://docs.python.org/3/library/functional.html
 
 * Closures
 
-    | https://en.wikipedia.org/wiki/Closure_(computer_programming)
-    | http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent
+  | https://en.wikipedia.org/wiki/Closure_(computer_programming)
+  | http://wiki.c2.com/?ClosuresAndObjectsAreEquivalent
 
 * Currying
 
-    | https://en.wikipedia.org/wiki/Currying
+  | https://en.wikipedia.org/wiki/Currying
 
 * Scope or Lexical Scope in Python
 
-    | https://en.wikipedia.org/wiki/Scope_(computer_science)#Python
+  | https://en.wikipedia.org/wiki/Scope_(computer_science)#Python
 
 
 Optional Reading
