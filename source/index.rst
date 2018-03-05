@@ -94,6 +94,7 @@ Optional Reading
   | https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
 
 * FP is Dead, Long live FP
+
   | https://youtu.be/ROL58LJGNfA
 
 
