@@ -121,7 +121,7 @@ What exactly are Closures, these mysterious things that offer programming enligh
 * Objects can, and generally do, carry mutable state.
 * Closures can, and often do, carry mutable state.
 
-* Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules, by default however object attributes are externally accessible.
+* Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules.  By default however object attributes are externally accessible.
 * Closures by nature tend to close around their internal state and thereby prevent external access, thus in terms of access to internal state, internal attributes, this is the opposite of the default behavior of an object.  In accordance with Python's Consenting Adults policy a closure's internal state is still accessible via its ``__closure__`` dunder, but this violates the spirit of a closure --- so do so at your own risk.
 
 Thus, objects (or classes) and closures are similar, but different.
@@ -359,6 +359,33 @@ We can use ``functools.partial`` to *partially* evaluate the function, giving us
 Quiz
 ****
 
+1. Closures can carry mutable state.
+
+   | True
+   | False
+
+2. Closures encourage direct, external access of their internal attributes.
+
+   | True
+   | False
+
+3. What is arity?
+
+   | Arity is a condition that describes the over-inflation of a call to functools.partial.
+   | Arity is when too few closures have been defined within a system.
+   | Arity relates to the number and types of arguments expected by a function.
+
+4. What is the purpose of currying?
+
+   | To hide values inside objects.
+   | To add spice to your code.
+   | To reduce the number of arguments to a function and thereby make it more composable.
+
+5. Python offers a library function to facilitate currying.  What is it called?
+
+   | __init__()
+   | __closure__()
+   | functools.partial()
 
 
 ********
