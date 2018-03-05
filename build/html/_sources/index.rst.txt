@@ -18,7 +18,7 @@ Introduction
 
 In this third lesson on functional programming follow a string of related techniques.  We first look at closures and compare them to classes and objects and thereby bridge the gap between functional programming and object oriented programming.  We then see how closures form the basis of function currying, and in turn how function currying facilitates functional composition.
 
-We wrap up our series of functional programming lessons with an overview of the Itertools and Functools libraries which facilitates the techniques covered across all three lessons.
+We wrap up our series of functional programming lessons with an overview of the Itertools and Functools libraries which facilitate the techniques covered across all three lessons.
 
 Recommended Text
 ================
@@ -92,6 +92,9 @@ Optional Reading
 * What is the advantage of currying?
 
   | https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
+
+* FP is Dead, Long live FP
+  | https://youtu.be/ROL58LJGNfA
 
 
 *******
