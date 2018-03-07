@@ -93,7 +93,12 @@ Optional Reading
 
   | https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
 
+* Partials are fun!
+
+  | https://www.pydanny.com/python-partials-are-fun.html
+
 * FP is Dead, Long live FP
+
   | https://youtu.be/ROL58LJGNfA
 
 
@@ -120,7 +125,7 @@ What exactly are Closures, these mysterious things that offer programming enligh
 * Objects can, and generally do, carry mutable state.
 * Closures can, and often do, carry mutable state.
 
-* Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules, by default however object attributes are externally accessible.
+* Objects control access to their attributes --- their internal state --- through Properties and Python's lexical scoping rules.  By default however object attributes are externally accessible.
 * Closures by nature tend to close around their internal state and thereby prevent external access, thus in terms of access to internal state, internal attributes, this is the opposite of the default behavior of an object.  In accordance with Python's Consenting Adults policy a closure's internal state is still accessible via its ``__closure__`` dunder, but this violates the spirit of a closure --- so do so at your own risk.
 
 Thus, objects (or classes) and closures are similar, but different.
@@ -139,7 +144,7 @@ Let's unpack that line by line.
 1.  The closure is defined like any other function with a name and arguments.  In this case the name of the function is ``closure`` and its arguments are ``internal_state``.
 2.  Inside the closure another function is defined.  It too takes arguments.  In this case its name is ``return_function``, because *this internally defined function itself will be returned by the closure.*
 3.  When calculating a return value the internal function, ``return_function``, uses both the ``internal state`` passed into the closure on line 1 when the closure was first defined, and also the arguments that will be passed into it later when it is used as a stand-alone function.
-4.  The closure uses the *internally defined* function, ``return_function`` for its return value.  **Thus, just as a class is a template or factory for creating objects, a closure is a template or factory for creating stand-alone methods.**
+4.  The closure uses the *internally defined* function, ``return_function`` for its return value.  **Thus, just as a class is a template or factory for creating stateful objects, a closure is a template or factory for creating stateful functions, that is, stand-alone methods.**
 
 
 Functions Within Functions
@@ -358,17 +363,53 @@ We can use ``functools.partial`` to *partially* evaluate the function, giving us
 Quiz
 ****
 
+1. Closures can carry mutable state.
+
+   | True
+   | False
+
+2. Closures encourage direct, external access of their internal attributes.
+
+   | True
+   | False
+
+3. What is arity?
+
+   | Arity is a condition that describes the over-inflation of a call to functools.partial.
+   | Arity is when too few closures have been defined within a system.
+   | Arity relates to the number and types of arguments expected by a function.
+
+4. What is the purpose of currying?
+
+   | To hide values inside objects.
+   | To add spice to your code.
+   | To reduce the number of arguments to a function and thereby make it more composable.
+
+5. Python offers a library function to facilitate currying.  What is it called?
+
+   | __init__()
+   | __closure__()
+   | functools.partial()
 
 
-********
-Activity
-********
+*********************
+Activity & Assignment
+*********************
 
 
+Generators
+==========
 
-**********
-Assignment
-**********
+Last week we looked at Spotify's top tracks from 2017.  We used comprehensions and perhaps a lambda to find tracks we might like.  Having recovered from last week's adventure in pop music we're ready to venture back.
+
+Write a generator to find and print all of your favorite artist's tracks from the data set.  Your favorite artist isn't represented in that set?  In that case, find Ed Sheeran's tracks.
+
+Load the data set following the instructions from last week.  Submit your generator expression and the titles of Ed's tracks.
+
+Closures
+========
+
+Using the same data set, write a closure to capture high energy tracks.  We will define high energy tracks as anything over 8.0.  Submit your code and the tracks it finds, artist name, track name and energy value.
 
 
 

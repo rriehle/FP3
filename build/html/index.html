@@ -124,8 +124,15 @@
 <div class="line"><a class="reference external" href="https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying">https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying</a></div>
 </div>
 </li>
-<li><p class="first">FP is Dead, Long live FP
-| <a class="reference external" href="https://youtu.be/ROL58LJGNfA">https://youtu.be/ROL58LJGNfA</a></p>
+<li><p class="first">Partials are fun!</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://www.pydanny.com/python-partials-are-fun.html">https://www.pydanny.com/python-partials-are-fun.html</a></div>
+</div>
+</li>
+<li><p class="first">FP is Dead, Long live FP</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://youtu.be/ROL58LJGNfA">https://youtu.be/ROL58LJGNfA</a></div>
+</div>
 </li>
 </ul>
 </div>
@@ -144,7 +151,7 @@
 <li>Closures <em>are</em> methods — they are defined and behave like functions, but like object methods they carry internal state and take it into account when returning results.</li>
 <li>Objects can, and generally do, carry mutable state.</li>
 <li>Closures can, and often do, carry mutable state.</li>
-<li>Objects control access to their attributes — their internal state — through Properties and Python’s lexical scoping rules, by default however object attributes are externally accessible.</li>
+<li>Objects control access to their attributes — their internal state — through Properties and Python’s lexical scoping rules.  By default however object attributes are externally accessible.</li>
 <li>Closures by nature tend to close around their internal state and thereby prevent external access, thus in terms of access to internal state, internal attributes, this is the opposite of the default behavior of an object.  In accordance with Python’s Consenting Adults policy a closure’s internal state is still accessible via its <code class="docutils literal"><span class="pre">__closure__</span></code> dunder, but this violates the spirit of a closure — so do so at your own risk.</li>
 </ul>
 <p>Thus, objects (or classes) and closures are similar, but different.</p>
@@ -160,7 +167,7 @@
 <li>The closure is defined like any other function with a name and arguments.  In this case the name of the function is <code class="docutils literal"><span class="pre">closure</span></code> and its arguments are <code class="docutils literal"><span class="pre">internal_state</span></code>.</li>
 <li>Inside the closure another function is defined.  It too takes arguments.  In this case its name is <code class="docutils literal"><span class="pre">return_function</span></code>, because <em>this internally defined function itself will be returned by the closure.</em></li>
 <li>When calculating a return value the internal function, <code class="docutils literal"><span class="pre">return_function</span></code>, uses both the <code class="docutils literal"><span class="pre">internal</span> <span class="pre">state</span></code> passed into the closure on line 1 when the closure was first defined, and also the arguments that will be passed into it later when it is used as a stand-alone function.</li>
-<li>The closure uses the <em>internally defined</em> function, <code class="docutils literal"><span class="pre">return_function</span></code> for its return value.  <strong>Thus, just as a class is a template or factory for creating objects, a closure is a template or factory for creating stand-alone methods.</strong></li>
+<li>The closure uses the <em>internally defined</em> function, <code class="docutils literal"><span class="pre">return_function</span></code> for its return value.  <strong>Thus, just as a class is a template or factory for creating stateful objects, a closure is a template or factory for creating stateful functions, that is, stand-alone methods.</strong></li>
 </ol>
 <div class="section" id="functions-within-functions">
 <h4>Functions Within Functions<a class="headerlink" href="#functions-within-functions" title="Permalink to this headline">¶</a></h4>
@@ -321,12 +328,54 @@
 </div>
 <div class="section" id="quiz">
 <h2>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Closures can carry mutable state.</p>
+<div class="line-block">
+<div class="line">True</div>
+<div class="line">False</div>
 </div>
-<div class="section" id="activity">
-<h2>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">¶</a></h2>
+</li>
+<li><p class="first">Closures encourage direct, external access of their internal attributes.</p>
+<div class="line-block">
+<div class="line">True</div>
+<div class="line">False</div>
 </div>
-<div class="section" id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
+</li>
+<li><p class="first">What is arity?</p>
+<div class="line-block">
+<div class="line">Arity is a condition that describes the over-inflation of a call to functools.partial.</div>
+<div class="line">Arity is when too few closures have been defined within a system.</div>
+<div class="line">Arity relates to the number and types of arguments expected by a function.</div>
+</div>
+</li>
+<li><p class="first">What is the purpose of currying?</p>
+<div class="line-block">
+<div class="line">To hide values inside objects.</div>
+<div class="line">To add spice to your code.</div>
+<div class="line">To reduce the number of arguments to a function and thereby make it more composable.</div>
+</div>
+</li>
+<li><p class="first">Python offers a library function to facilitate currying.  What is it called?</p>
+<div class="line-block">
+<div class="line">__init__()</div>
+<div class="line">__closure__()</div>
+<div class="line">functools.partial()</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="activity-assignment">
+<h2>Activity &amp; Assignment<a class="headerlink" href="#activity-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generators">
+<h3>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h3>
+<p>Last week we looked at Spotify’s top tracks from 2017.  We used comprehensions and perhaps a lambda to find tracks we might like.  Having recovered from last week’s adventure in pop music we’re ready to venture back.</p>
+<p>Write a generator to find and print all of your favorite artist’s tracks from the data set.  Your favorite artist isn’t represented in that set?  In that case, find Ed Sheeran’s tracks.</p>
+<p>Load the data set following the instructions from last week.  Submit your generator expression and the titles of Ed’s tracks.</p>
+</div>
+<div class="section" id="id1">
+<h3>Closures<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Using the same data set, write a closure to capture high energy tracks.  We will define high energy tracks as anything over 8.0.  Submit your code and the tracks it finds, artist name, track name and energy value.</p>
+</div>
 </div>
 <div class="section" id="indices-and-tables">
 <h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
@@ -374,8 +423,11 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#quiz">Quiz</a></li>
-<li><a class="reference internal" href="#activity">Activity</a></li>
-<li><a class="reference internal" href="#assignment">Assignment</a></li>
+<li><a class="reference internal" href="#activity-assignment">Activity &amp; Assignment</a><ul>
+<li><a class="reference internal" href="#generators">Generators</a></li>
+<li><a class="reference internal" href="#id1">Closures</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
