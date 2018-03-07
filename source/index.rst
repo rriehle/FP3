@@ -398,7 +398,7 @@ Activity & Assignment
 
 
 Generators
-----------
+==========
 
 Last week we looked at Spotify's top tracks from 2017.  We used comprehensions and perhaps a lambda to find tracks we might like.  Having recovered from last week's adventure in pop music we're ready to venture back.
 
@@ -407,7 +407,7 @@ Write a generator to find and print all of your favorite artist's tracks from th
 Load the data set following the instructions from last week.  Submit your generator expression and the titles of Ed's tracks.
 
 Closures
---------
+========
 
 Using the same data set, write a closure to capture high energy tracks.  We will define high energy tracks as anything over 8.0.  Submit your code and the tracks it finds, artist name, track name and energy value.
 
