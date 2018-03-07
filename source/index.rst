@@ -93,6 +93,10 @@ Optional Reading
 
   | https://softwareengineering.stackexchange.com/questions/185585/what-is-the-advantage-of-currying
 
+* Partials are fun!
+
+  | https://www.pydanny.com/python-partials-are-fun.html
+
 * FP is Dead, Long live FP
 
   | https://youtu.be/ROL58LJGNfA
@@ -388,15 +392,24 @@ Quiz
    | functools.partial()
 
 
-********
-Activity
-********
+*********************
+Activity & Assignment
+*********************
 
 
+Generators
+----------
 
-**********
-Assignment
-**********
+Last week we looked at Spotify's top tracks from 2017.  We used comprehensions and perhaps a lambda to find tracks we might like.  Having recovered from last week's adventure in pop music we're ready to venture back.
+
+Write a generator to find and print all of your favorite artist's tracks from the data set.  Your favorite artist isn't represented in that set?  In that case, find Ed Sheeran's tracks.
+
+Load the data set following the instructions from last week.  Submit your generator expression and the titles of Ed's tracks.
+
+Closures
+--------
+
+Using the same data set, write a closure to capture high energy tracks.  We will define high energy tracks as anything over 8.0.  Submit your code and the tracks it finds, artist name, track name and energy value.
 
 
 
